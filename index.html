@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="./lib/cash.js"></script>
+    <script defer src="./lib/templater.js"></script>
+    <script defer src="./src/data.js"></script>
     <script defer src="./src/main.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Pen Factory</title>
@@ -8,19 +11,37 @@
 <body>
     <div id="main-wrapper">
         <div class="unit" id="click-unit" style="gap: 10px; padding: 10px;">
-            <div class="main-btn"><h3>Get Material: 0</h3></div>
-            <div class="main-btn"><h3>Get Ink: 0</h3></div>
-            <div class="main-btn"><h3>Craft and Sell Pen</h3></div>
+            <div id="money-wrapper">
+                <h3 id="money-txt" templ>Money: {{money}}</h3>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="main-btn" id="get-material"><h3 templ>Material: {{material}}</h3><p class="craft-info">-10</p></div>
+                <div class="main-btn" id="get-ink"><h3 templ>Ink: {{ink}}</h3><p class="craft-info">-10</p></div>
+            </div>
+            <div class="main-btn" id="craft-sell"><h3>Craft and Sell</h3></div>
         </div>
-        <div class="unit" id="resource-info">
-            <div><h3 class="info-text">Material: 0</h3></div>
-            <div><h3 class="info-text">Ink: 0</h3></div>
-            <div><h3 class="info-text">Money: 0</h3></div>
+        <div class="unit" id="">
+            
+        </div>
+        <div class="unit" id="click-mult">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="main-btn"><h3 templ style="width: max-content;">+0 Mat/click</h3></div>
+                <div class="main-btn"><h3 templ style="width: max-content;">+0 Ink/click</h3></div>
+            </div>
+            <div class="main-btn"><h3 templ></h3></div>
+            <div class="main-btn"><h3 templ></h3></div>
+        </div>
+        <div class="unit" id="idle-unit">
+            <div class="main-btn"><h3 templ>0 material/sec</h3></div>
+            <div class="main-btn"><h3 templ>0 ink/sec</h3></div>
+            <div class="main-btn"><h3 templ>0 pens/sec</h3></div>
         </div>
         <div class="unit"></div>
-        <div class="unit"></div>
-        <div class="unit"></div>
-        <div class="unit"></div>
+        <div class="unit" id="idle-mult">
+            <div class="main-btn"><h3 templ></h3></div>
+            <div class="main-btn"><h3 templ></h3></div>
+            <div class="main-btn"><h3 templ></h3></div>
+        </div>
     </div>
 </body>
 </html>
