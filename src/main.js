@@ -114,7 +114,7 @@ reduce_ink.onclick = () =>{
         data.ink_pp -= 1;
     } 
     if (data.ink_pp <= 1) {
-        reduce_ink.innerHTML = "<h3>*Maxed out*</h3>"
+        reduce_ink.innerHTML = "<h3>*Maxed out*</h3>";
         if(data.material_pp <= 1){
             $("#win-game")[0].innerHTML = "<h3>Start a monopoly</h3><h4 watch>Cost: {win_game_cost}</h4>";
             data.win_game_cost = data.win_game_cost;

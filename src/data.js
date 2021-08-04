@@ -26,18 +26,19 @@ settings = [
 ];
 
 if (local.can_load()) {
-    // local.clear();
-    // console.log(`Ink: ${local.load().ink}`);
     data = local.load();
     data.settings = settings;
     local.finish();
-    // console.log(`Ink: ${local.load().ink}`);
+
+    if (data.can_win)  $("#win-game")[0].innerHTML = "<h3>Start a monopoly</h3><h4 watch>Cost: {win_game_cost}</h4>";
+    if (data.material_pp == 1) $("#reduce-material")[0].innerHTML = "<h3>*Maxed out*</h3>";
+    if (data.ink_pp == 1) $("#reduce-ink")[0].innerHTML = "<h3>*Maxed out*</h3>";
 } else {
     data.settings = settings;
 
     data.material = 0;
     data.ink = 0;
-    data.money = 200000;
+    data.money = 0;
     
     data.material_pc = 1;
     data.ink_pc = 1;
@@ -68,7 +69,7 @@ if (local.can_load()) {
     data.can_win = false;
     data.win_game_cost = 100000;
 }
-    
+
 //#region Dom Constants
 const get_material = $("#get-material")[0];
 const get_ink = $("#get-ink")[0];
