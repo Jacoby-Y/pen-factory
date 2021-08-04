@@ -15,21 +15,36 @@
                 <h3 id="money-txt" watch>Money: {money}</h3>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div class="main-btn" id="get-material"><h3 watch>Material: {material}</h3><p class="craft-info">-10</p></div>
-                <div class="main-btn" id="get-ink"><h3 watch>Ink: {ink}</h3><p class="craft-info">-10</p></div>
+                <div class="main-btn" id="get-material"><h3 watch>Material: +{material_pc}</h3><p class="craft-info">-10</p></div>
+                <div class="main-btn" id="get-ink"><h3 watch>Ink: +{ink_pc}</h3><p class="craft-info">-10</p></div>
             </div>
-            <div class="main-btn" id="craft-sell"><h3>Craft and Sell</h3></div>
+            <div class="main-btn" id="craft-sell"><h3 watch>Craft and Sell: +{craft_pc}</h3></div>
         </div>
-        <div class="unit" id="">
-            
+        <div class="unit" id="ammount-unit">
+            <div  id="ammount-material" ><h3 class= "ammount" watch>{material} Mat</h3></div>
+            <div  id="ammount-ink"><h3 class= "ammount" watch>{ink} Ink</h3></div>
+            <div  id="money-pp"><h3 class= "ammount" watch>{money_pp} Money/Pen</h3></div>
         </div>
         <div class="unit" id="click-mult">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div class="main-btn"><h3 watch style="width: max-content;">+0 Mat/click</h3></div>
-                <div class="main-btn"><h3 watch style="width: max-content;">+0 Ink/click</h3></div>
+                <div class="main-btn" style="display: grid; grid-template-rows: 1fr 1fr; gap: 10px;text-align: center;align-items: center;" id="upgrade-mat-pc">
+                    <h3 >+1 Mat/click</h3>
+                    <h4 watch>Cost: {cost_upgrade_mat_pc}</h4>
+                </div>
+                <div class="main-btn" style="display: grid; grid-template-rows: 1fr 1fr; gap: 10px;text-align: center;align-items: center;" id="upgrade-ink-pc">
+                    <h3 >+1 Ink/click</h3>
+                    <h4 watch>Cost: {cost_upgrade_ink_pc}</h4>
+                </div>
             </div>
-            <div class="main-btn"><h3 watch></h3></div>
-            <div class="main-btn"><h3 watch></h3></div>
+            <div class="main-btn" style="display: grid; grid-template-rows: 1fr 1fr; gap: 10px;text-align: center;align-items: center;" id="upgrade-craft-pc">
+                <h3 >+1 Craft/click</h3>
+                <h4 watch>Cost: {cost_upgrade_craft_pc}</h4>
+            </div>
+            <div class="main-btn" style="display: grid; grid-template-rows: 1fr 1fr; gap: 10px;text-align: center;align-items: center;" id="upgrade-money-pp">
+                <h3>+1 Money/Pen</h3>
+                <h4 watch>Cost: {cost_upgrade_money_pp}</h4>
+            </div>
+
         </div>
         <div class="unit" id="idle-unit">
             <div class="main-btn"><h3 watch>0 material/sec</h3></div>

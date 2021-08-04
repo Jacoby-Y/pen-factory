@@ -4,7 +4,10 @@ const craft_sell = $("#craft-sell")[0];
 const craft_infos = $(".craft-info");
 craft_infos.css("display", "none");
 // console.log(craft_infos);
-
+const upgrade_mat = $("#upgrade-mat-pc")[0]
+const upgrade_ink = $("#upgrade-ink-pc")[0]
+const upgrade_craft = $("#upgrade-craft-pc")[0]
+const upgrade_money_pp = $("#upgrade-money-pp")[0]
 get_material.onclick = ()=>{
     data.material = data.material + data.material_pc;
 }
@@ -20,7 +23,8 @@ craft_sell.onclick = () => {
     const craft_pc = data.craft_pc;
     let i = 0
     while (material >= material_per && ink >= ink_per && i < craft_pc) {
-        money = data.money + data.money_pp ;
+        console.log(money)
+        money = money + data.money_pp ;
         material -= material_per;
         ink -= ink_per;
         i++;
@@ -51,4 +55,29 @@ craft_sell.onmouseenter = ()=>{
 }
 craft_sell.onmouseleave = ()=>{
     craft_infos.css("display", "none");
+}
+
+upgrade_mat.onclick = ()=>{
+    if (data.money >= data.cost_upgrade_mat_pc){
+        data.money -=data.cost_upgrade_mat_pc;
+        data.material_pc +=1;
+    }
+}
+upgrade_ink.onclick = ()=>{
+    if (data.money >= data.cost_upgrade_ink_pc){
+        data.money -=data.cost_upgrade_ink_pc;
+        data.ink_pc +=1;
+    }
+}
+upgrade_craft.onclick = ()=>{
+    if (data.money >= data.cost_upgrade_craft_pc){
+        data.money -=data.cost_upgrade_craft_pc;
+        data.craft_pc +=1;
+    }
+}
+upgrade_money_pp.onclick = ()=>{
+    if (data.money >= data.cost_upgrade_money_pp){
+        data.money -=data.cost_upgrade_money_pp;
+        data.money_pp +=1;
+    }
 }
