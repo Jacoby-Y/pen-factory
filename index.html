@@ -10,9 +10,9 @@
 </head>
 <body>
     <div id="main-wrapper">
-        <div class="unit" id="click-unit" style="gap: 10px; padding: 10px;">
+        <div class="unit btn-unit" id="click-unit">
             <div id="money-wrapper">
-                <h3 id="money-txt" watch>Money: {money}</h3>
+                <h3 id="money-txt" watch>Money: ${money}</h3>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                 <div class="main-btn" id="get-material"><h3 watch>Material: +{material_pc}</h3><p class="craft-info">-10</p></div>
@@ -20,12 +20,12 @@
             </div>
             <div class="main-btn" id="craft-sell"><h3 watch>Craft and Sell: +{craft_pc}</h3></div>
         </div>
-        <div class="unit" id="ammount-unit">
-            <div  id="ammount-material" ><h3 class= "ammount" watch>{material} Mat</h3></div>
-            <div  id="ammount-ink"><h3 class= "ammount" watch>{ink} Ink</h3></div>
-            <div  id="money-pp"><h3 class= "ammount" watch>{money_pp} Money/Pen</h3></div>
+        <div class="unit info-unit">
+            <div  id="amount-material" ><h3 class= "amount" watch>{material} Mat</h3></div>
+            <div  id="amount-ink"><h3 class= "amount" watch>{ink} Ink</h3></div>
+            <div  id="money-pp"><h3 class= "amount" watch>{money_pp} Money/Pen</h3></div>
         </div>
-        <div class="unit" id="click-mult">
+        <div class="unit btn-unit" id="upgrade-unit">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                 <div class="main-btn" style="display: grid; grid-template-rows: 1fr 1fr; gap: 10px;text-align: center;align-items: center;" id="upgrade-mat-pc">
                     <h3 >+1 Mat/click</h3>
@@ -46,13 +46,28 @@
             </div>
 
         </div>
-        <div class="unit" id="idle-unit">
-            <div class="main-btn"><h3 watch>0 material/sec</h3></div>
-            <div class="main-btn"><h3 watch>0 ink/sec</h3></div>
-            <div class="main-btn"><h3 watch>0 pens/sec</h3></div>
+        <div class="unit btn-unit">
+            <div class="main-btn idle-btn" id="upgrade-idle-material">
+                <h3>+1 material/sec</h3>
+                <h4 watch>-${cost_upgrade_mat_idle}</h4>
+            </div>
+            <div class="main-btn idle-btn" id="upgrade-idle-ink">
+                <h3>+1 ink/sec</h3>
+                <h4 watch>-${cost_upgrade_ink_idle}</h4>
+            </div>
+            <div class="main-btn idle-btn" id="upgrade-idle-craft">
+                <h3>+1 craft 'n sell/sec</h3>
+                <h4 watch>-${cost_upgrade_craft_idle}</h4>
+            </div>
         </div>
-        <div class="unit"></div>
-        <div class="unit" id="idle-mult">
+        <div class="unit info-unit" id="idle-info">
+            <div  id="amount-material" ><h3 class= "amount" watch>{idle_material_ps} Mat/sec</h3></div>
+            <div  id="amount-ink"><h3 class= "amount" watch>{idle_ink_ps} Ink/sec</h3></div>
+            <div  id="money-pp"><h3 class= "amount">
+                <span watch>{idle_craft_ps}</span> </br>
+            </h3></div>
+        </div>
+        <div class="unit btn-unit" id="idle-mult">
             <div class="main-btn"><h3 watch></h3></div>
             <div class="main-btn"><h3 watch></h3></div>
             <div class="main-btn"><h3 watch></h3></div>
