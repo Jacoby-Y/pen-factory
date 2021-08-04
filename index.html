@@ -15,8 +15,8 @@
                 <h3 id="money-txt" watch>Money: ${money}</h3>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div class="main-btn" id="get-material"><h3 watch>Material: +{material_pc}</h3><p class="craft-info">-10</p></div>
-                <div class="main-btn" id="get-ink"><h3 watch>Ink: +{ink_pc}</h3><p class="craft-info">-10</p></div>
+                <div class="main-btn" id="get-material"><h3 watch>Material: +{material_pc}</h3><p class="craft-info" watch>-{material_pp}</p></div>
+                <div class="main-btn" id="get-ink"><h3 watch>Ink: +{ink_pc}</h3><p class="craft-info" watch>-{ink_pp}</p></div>
             </div>
             <div class="main-btn" id="craft-sell"><h3 watch>Craft and Sell: +{craft_pc}</h3></div>
         </div>
@@ -61,16 +61,25 @@
             </div>
         </div>
         <div class="unit info-unit" id="idle-info">
-            <div  id="amount-material" ><h3 class= "amount" watch>{idle_material_ps} Mat/sec</h3></div>
-            <div  id="amount-ink"><h3 class= "amount" watch>{idle_ink_ps} Ink/sec</h3></div>
-            <div  id="money-pp"><h3 class= "amount">
+            <div  id="amount-material" ><h3 class="amount" watch>{idle_material_ps} Mat/sec</h3></div>
+            <div  id="amount-ink"><h3 class="amount" watch>{idle_ink_ps} Ink/sec</h3></div>
+            <div  id="money-pp"><h3 class="amount">
                 <span watch>{idle_craft_ps}</span> </br>
             </h3></div>
         </div>
-        <div class="unit btn-unit" id="idle-mult">
-            <div class="main-btn"><h3 watch></h3></div>
-            <div class="main-btn"><h3 watch></h3></div>
-            <div class="main-btn"><h3 watch></h3></div>
+        <div class="unit btn-unit" id="prestige">
+            <div class="main-btn prestige-btn" id="reduce-material">
+                <h3 watch>-1 material/pen </h3>
+                <h4 watch>-${cost_prestige_material}</h4>
+            </div>
+            <div class="main-btn prestige-btn" id="reduce-ink">
+                <h3 watch>-1 ink/pen</h3>
+                <h4 watch>-${cost_prestige_ink}</h4>
+            </div>
+            <div class="main-btn" id="win-game">
+                <h3>*Locked*</h3>
+                <h4>Unlock by reducing material and ink to 1 per pen</h4>
+            </div>
         </div>
     </div>
 </body>

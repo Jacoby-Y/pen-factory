@@ -37,7 +37,6 @@ body {
 .craft-info {
     position: absolute;
     font-weight: bold;
-    color: rgb(184, 0, 0);
     margin: 0;
     right: 5px;
     bottom: 5px;
@@ -107,7 +106,6 @@ body {
 .idle-btn h4 {
     position: absolute;
     right: 20px;
-    display: none;
 }
 .info-unit {
     display: grid;
@@ -115,5 +113,20 @@ body {
     gap: 10px;
     align-items: center;
     color: white;
+    text-align: center;
+}
+/* #reduce-ink {
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 10px;
+    text-align: center;
+    align-items: center; 
+}*/
+.prestige-btn h4 {
+    position: absolute;
+    right: 20px;
+}
+#win-game h4 {
+    margin: 0 auto;
     text-align: center;
 }
