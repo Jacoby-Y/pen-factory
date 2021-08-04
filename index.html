@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script src="./lib/cash.js"></script>
-    <script defer src="./lib/templater.js"></script>
+    <script defer src="./lib/watcher.js"></script>
     <script defer src="./src/data.js"></script>
     <script defer src="./src/main.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -12,11 +12,11 @@
     <div id="main-wrapper">
         <div class="unit" id="click-unit" style="gap: 10px; padding: 10px;">
             <div id="money-wrapper">
-                <h3 id="money-txt" templ>Money: {{money}}</h3>
+                <h3 id="money-txt" watch>Money: {money}</h3>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div class="main-btn" id="get-material"><h3 templ>Material: {{material}}</h3><p class="craft-info">-10</p></div>
-                <div class="main-btn" id="get-ink"><h3 templ>Ink: {{ink}}</h3><p class="craft-info">-10</p></div>
+                <div class="main-btn" id="get-material"><h3 watch>Material: {material}</h3><p class="craft-info">-10</p></div>
+                <div class="main-btn" id="get-ink"><h3 watch>Ink: {ink}</h3><p class="craft-info">-10</p></div>
             </div>
             <div class="main-btn" id="craft-sell"><h3>Craft and Sell</h3></div>
         </div>
@@ -25,22 +25,22 @@
         </div>
         <div class="unit" id="click-mult">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div class="main-btn"><h3 templ style="width: max-content;">+0 Mat/click</h3></div>
-                <div class="main-btn"><h3 templ style="width: max-content;">+0 Ink/click</h3></div>
+                <div class="main-btn"><h3 watch style="width: max-content;">+0 Mat/click</h3></div>
+                <div class="main-btn"><h3 watch style="width: max-content;">+0 Ink/click</h3></div>
             </div>
-            <div class="main-btn"><h3 templ></h3></div>
-            <div class="main-btn"><h3 templ></h3></div>
+            <div class="main-btn"><h3 watch></h3></div>
+            <div class="main-btn"><h3 watch></h3></div>
         </div>
         <div class="unit" id="idle-unit">
-            <div class="main-btn"><h3 templ>0 material/sec</h3></div>
-            <div class="main-btn"><h3 templ>0 ink/sec</h3></div>
-            <div class="main-btn"><h3 templ>0 pens/sec</h3></div>
+            <div class="main-btn"><h3 watch>0 material/sec</h3></div>
+            <div class="main-btn"><h3 watch>0 ink/sec</h3></div>
+            <div class="main-btn"><h3 watch>0 pens/sec</h3></div>
         </div>
         <div class="unit"></div>
         <div class="unit" id="idle-mult">
-            <div class="main-btn"><h3 templ></h3></div>
-            <div class="main-btn"><h3 templ></h3></div>
-            <div class="main-btn"><h3 templ></h3></div>
+            <div class="main-btn"><h3 watch></h3></div>
+            <div class="main-btn"><h3 watch></h3></div>
+            <div class="main-btn"><h3 watch></h3></div>
         </div>
     </div>
 </body>

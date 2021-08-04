@@ -1,4 +1,3 @@
-
 const get_material = $("#get-material")[0];
 const get_ink = $("#get-ink")[0];
 const craft_sell = $("#craft-sell")[0];
@@ -7,21 +6,21 @@ craft_infos.css("display", "none");
 // console.log(craft_infos);
 
 get_material.onclick = ()=>{
-    data.material = data.material.value + data.material_pc.value;
+    data.material = data.material + data.material_pc;
 }
 get_ink.onclick = ()=>{
-    data.ink = data.ink.value + data.ink_pc.value;
+    data.ink = data.ink + data.ink_pc;
 }
 craft_sell.onclick = () => {
-    const material_per = data.material_pp.value;
-    let material = data.material.value;
-    const ink_per = data.ink_pp.value;
-    let ink = data.ink.value;
-    let money = data.money.value;
-    const craft_pc = data.craft_pc.value;
+    const material_per = data.material_pp;
+    let material = data.material;
+    const ink_per = data.ink_pp;
+    let ink = data.ink;
+    let money = data.money;
+    const craft_pc = data.craft_pc;
     let i = 0
     while (material >= material_per && ink >= ink_per && i < craft_pc) {
-        money = data.money.value + data.money_pp.value ;
+        money = data.money + data.money_pp ;
         material -= material_per;
         ink -= ink_per;
         i++;
@@ -32,8 +31,8 @@ craft_sell.onclick = () => {
 }
 
 const max_pens_pc = ()=>{
-    const max_material = Math.floor(data.material.value / data.material_pp);
-    const max_ink = Math.floor(data.ink.value / data.ink_pp);
+    const max_material = Math.floor(data.material / data.material_pp);
+    const max_ink = Math.floor(data.ink / data.ink_pp);
     return Math.min(max_material, max_ink);
 }
 
@@ -42,12 +41,12 @@ craft_sell.onmouseenter = ()=>{
     const max_pens = max_pens_pc();
     if (max_pens > 0) {
         craft_infos.css("color", "green");
-        craft_infos[0].innerText = `-${data.material_pp.value*max_pens}`;
-        craft_infos[1].innerText = `-${data.ink_pp.value*max_pens}`;
+        craft_infos[0].innerText = `-${data.material_pp*max_pens}`;
+        craft_infos[1].innerText = `-${data.ink_pp*max_pens}`;
     } else {
         craft_infos.css("color", "red");
-        craft_infos[0].innerText = `-${data.material_pp.value}`;
-        craft_infos[1].innerText = `-${data.ink_pp.value}`;
+        craft_infos[0].innerText = `-${data.material_pp}`;
+        craft_infos[1].innerText = `-${data.ink_pp}`;
     }
 }
 craft_sell.onmouseleave = ()=>{
